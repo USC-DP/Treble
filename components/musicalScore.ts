@@ -21,13 +21,13 @@ export default function musicalScore({
     contextSize: { x: contextSize.x, y: contextSize.y },
   });
 
-  const stave = new Stave(0, 0, contextSize.y);
+  const stave = new Stave(0, 0, contextSize.x);
   stave.setContext(context);
   stave.addKeySignature(keySignature);
 
   // Add a clef and time signature.
-  stave.addClef("treble")
-  stave.addTimeSignature("4/4");
+  stave.addClef(clef)
+  stave.addTimeSignature(timeSignature);
   stave.draw();
 
   return [context, stave];
